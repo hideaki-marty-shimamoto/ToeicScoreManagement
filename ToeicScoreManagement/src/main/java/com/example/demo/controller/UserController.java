@@ -29,7 +29,7 @@ public class UserController {
 	private UserInfoService userInfoService;
 	
 	// ユーザ情報一覧画面を表示
-	@GetMapping(value="/")
+	@GetMapping({"/", "/home", "/status"})
 	public String displaySearch(Model model) {
 		List<UserInfo> userList = userInfoService.findAll();
 		model.addAttribute("userlist", userList);
